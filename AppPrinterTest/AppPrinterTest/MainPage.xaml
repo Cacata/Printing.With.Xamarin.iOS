@@ -2,10 +2,76 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AppPrinterTest"
-             x:Class="AppPrinterTest.MainPage">
+             x:Class="AppPrinterTest.MainPage"
+             xmlns:theme="clr-namespace:AppPrinterTest"
+             xmlns:resources="clr-namespace:AppPrinterTest.Resources;assembly=AppPrinterTest"
+             BackgroundColor="#FFFFFF">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+
+    <!--Styles and Resources-->
+    <ContentPage.Resources>
+        <ResourceDictionary MergedWith="theme:PrintStyle" />
+    </ContentPage.Resources>
+
+
+    <!-- Application resource dictionary -->
+    <ContentPage.Content>
+        <StackLayout Style="{ StaticResource MainLayout }">
+            <!--Help Botton and Banner de Iberoservices-->
+            <StackLayout Style="{ StaticResource LayoutHeader }">
+                <StackLayout Style="{ StaticResource LayoutLogoContent }">
+                    <Image Style="{ StaticResource GrupoIberoLogo }" />
+                    <Image Style="{ StaticResource IberosatarLogo }" />
+                </StackLayout>
+            </StackLayout>
+            <Label Style="{ StaticResource TicketTitle }" Text="{resources:Translate print_ticket}" />
+            <BoxView Style="{ StaticResource Separator }"></BoxView>
+            <!--List of Tickets-->
+            <ScrollView Style="{ StaticResource Scroll }">
+                <StackLayout Style="{ StaticResource LayoutContent }">
+                    <ListView x:Name="LsDevice" Style="{StaticResource ListStyle}" SeparatorVisibility="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Style="{ StaticResource ListCellLayout }">
+                                        <StackLayout Style="{ StaticResource MainListTour }">
+                                            <StackLayout Style="{ StaticResource ImageTourList }">
+                                                <Image Source="{Binding ImgName}" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Vertical" Margin="15,0,0,0">
+                                                <StackLayout Style="{ StaticResource ContentTourList }">
+                                                    <Label Style="{ StaticResource TourDesc }" Text="{Binding Name}"/>
+                                                </StackLayout>
+                                                <StackLayout Style="{ StaticResource ContentTourList }">
+                                                    <Label Style="{ StaticResource TourDesc }" Text="{Binding DeviceAddress}" />
+                                                </StackLayout>
+                                                <StackLayout Style="{ StaticResource ContentTourList }">
+                                                    <Label Style="{ StaticResource TourDesc }" Text="{Binding State}"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+            <!--End List of Tickets-->
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" Margin="0,10,20,0" HorizontalOptions="EndAndExpand">
+                <Button x:Name="btnSearch" Style="{ StaticResource btnSearch }" Clicked="OnButtonSearch"/>
+                <Button x:Name="btnPrint" Style="{ StaticResource btnPrint }" Clicked="OnButtonPrint"/>
+                <Button x:Name="btnDisconnect" Style="{ StaticResource btnDisconnect }" Clicked="OnButtonDisconnect"/>
+            </StackLayout>
+
+            <BoxView Style="{ StaticResource Separator }"></BoxView>
+            <!--Footer-->
+            <StackLayout Style="{ StaticResource ButtonsContent }">
+                <Button x:Name="btnReturn" Style="{ StaticResource ControlButtons }" Text="Finish" />
+            </StackLayout>
+            <BoxView Style="{ StaticResource Separator }"></BoxView>
+        </StackLayout>
+    </ContentPage.Content>
 
 </ContentPage>

@@ -88,6 +88,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Dependecy\BluetoothHelper.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -121,11 +122,11 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\AppPrinterTest\AppPrinterTest.csproj">
-      <Project>{1F1DF407-0C44-480B-8C48-B36F16AF2448}</Project>
+      <Project>{F9BBCAB6-4B68-48E6-BD3A-BB90BD45C8D8}</Project>
       <Name>AppPrinterTest</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

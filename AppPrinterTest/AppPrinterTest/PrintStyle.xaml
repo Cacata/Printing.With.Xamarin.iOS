@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:resources="clr-namespace:AppPrinterTest.Resources;assembly=AppPrinterTest"
+             x:Class="AppPrinterTest.PrintStyle">
+
+    <!--Platform property-->
+    <OnPlatform x:TypeArguments="Color" iOS="#13457C" Android="#13457C" WinPhone="#13457C" x:Key="headercolor" />
+    <OnPlatform x:TypeArguments="Color" iOS="#d9d9d9" Android="#959595" WinPhone="#F6F6F6" x:Key="entrydisable" />
+    <OnPlatform x:TypeArguments="Color" iOS="#717171" Android="#717171" WinPhone="#717171" x:Key="entryenable" />
+    <OnPlatform x:Key="rowHeight" x:TypeArguments="x:Int32" iOS="116" Android="115" WinPhone="115" />
+    <OnPlatform x:Key="rowDHeight" x:TypeArguments="x:Int32" iOS="30" Android="30" WinPhone="30" />
+
+    <!--Properties setters-->
+    <Style x:Key="ContentFooter" TargetType="ContentView">
+        <Setter Property="AbsoluteLayout.LayoutBounds" Value="1,1,1,AutoSize" />
+        <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional, WidthProportional" />
+    </Style>
+
+    <Style x:Key="FooterLayout" TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="HorizontalOptions" Value="LayoutOptions.Fill"/>
+        <Setter Property="BackgroundColor" Value="#13457C"/>
+    </Style>
+
+    <Style x:Key="MainLayout" TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Vertical"/>
+    </Style>
+
+    <Style x:Key="LayoutHeader" TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="HorizontalOptions" Value="LayoutOptions.Fill"/>
+        <Setter Property="Margin" Value="0,15,0,20" />
+    </Style>
+
+    <Style x:Key="LayoutLogoContent" TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+    </Style>
+
+    <Style x:Key="GrupoIberoLogo" TargetType="Image">
+        <Setter Property="Source" Value="Grupo_Iberostar.png"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="Margin" Value="40,0,0,0" />
+    </Style>
+
+    <Style x:Key="IberosatarLogo" TargetType="Image">
+        <Setter Property="Source" Value="ExTLogoIBSp.png"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+        <Setter Property="Margin" Value="0,0,40,0" />
+    </Style>
+
+    <Style x:Key="FirstLayoutHeader" TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="HeightRequest" Value="45"/>
+        <!--<Setter Property="WidthRequest" Value="800"/>-->
+    </Style>
+
+    <Style x:Key="Scroll" TargetType="ScrollView">
+        <Setter Property="Orientation" Value="Vertical"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="WidthRequest" Value="300"/>
+    </Style>
+
+    <Style x:Key="LogoSeparator" TargetType="BoxView">
+        <Setter Property="Color" Value="#13457C"/>
+        <Setter Property="HeightRequest" Value="1"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+    </Style>
+
+    <Style x:Key="LayoutContent" TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Vertical"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        <Setter Property="HeightRequest" Value="700"/>
+        <Setter Property="Padding" Value="25,0,25,0"/>
+    </Style>
+
+    <Style x:Key="ListStyle" TargetType="ListView">
+        <Setter Property="RowHeight" Value="{StaticResource rowHeight}"/>
+        <Setter Property="BackgroundColor" Value="#ececec"/>
+    </Style>
+
+    <Style x:Key="ListCellLayout" TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Vertical"/>
+        <Setter Property="Margin" Value="0,0,0,20"/>
+    </Style>
+
+    <Style x:Key="TicketTitle" TargetType="Label">
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="VerticalOptions" Value="End"/>
+        <Setter Property="Margin" Value="30,0,0,0" />
+        <Setter Property="TextColor" Value="{StaticResource headercolor}"/>
+    </Style>
+
+    <Style x:Key="PaymentTitle" TargetType="Label">
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="VerticalOptions" Value="End"/>
+        <Setter Property="Margin" Value="30,0,0,0" />
+        <Setter Property="TextColor" Value="{StaticResource headercolor}"/>
+    </Style>
+
+    <Style x:Key="TitleTourDesc" TargetType="Label">
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="TextColor" Value="{StaticResource headercolor}"/>
+    </Style>
+
+    <Style x:Key="TitlePriceDesc" TargetType="Label">
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="TextColor" Value="{StaticResource headercolor}"/>
+    </Style>
+
+    <Style x:Key="PriceDesc" TargetType="Label">
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="TextColor" Value="#FFB768"/>
+    </Style>
+
+    <Style x:Key="TourDesc" TargetType="Label">
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="TextColor" Value="#55391B"/>
+    </Style>
+
+    <Style x:Key="Separator" TargetType="BoxView">
+        <Setter Property="Color" Value="#FFCB4E"/>
+        <Setter Property="HeightRequest" Value="1"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+    </Style>
+
+    <Style x:Key="ListSeparator" TargetType="BoxView">
+        <Setter Property="Color" Value="#13457C"/>
+        <Setter Property="HeightRequest" Value="2"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+    </Style>
+
+    <Style x:Key="MainListTour" TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="Margin" Value="20,10,0,10" />
+    </Style>
+
+    <Style x:Key="ImageTourList" TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+    </Style>
+
+    <Style x:Key="ButtonsContent" TargetType="StackLayout">
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="Margin" Value="30,0,0,0"/>
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+    </Style>
+
+    <Style x:Key="ListButtonsContent" TargetType="StackLayout">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="Margin" Value="0,0,20,0"/>
+        <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+    </Style>
+
+    <Style x:Key="ContentTourList" TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HeightRequest" Value="25"/>
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="Margin" Value="0,0,5,0"/>
+    </Style>
+
+    <Style x:Key="HelpButton" TargetType="Button">
+        <Setter Property="Text" Value="Help!"/>
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="TextColor" Value="#717171"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HeightRequest" Value="45"/>
+    </Style>
+
+    <Style x:Key="btnPrint" TargetType="Button">
+        <Setter Property="Text" Value="{ resources:Translate print_ticket }"/>
+        <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+        <Setter Property="BackgroundColor" Value="#FFCB4E"/>
+        <Setter Property="TextColor" Value="#717171"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HeightRequest" Value="45"/>
+        <Setter Property="Margin" Value="10,0,0,0" />
+    </Style>
+
+    <Style x:Key="btnDisconnect" TargetType="Button">
+        <Setter Property="Text" Value="{ resources:Translate disconnect }"/>
+        <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+        <Setter Property="BackgroundColor" Value="#FFCB4E"/>
+        <Setter Property="TextColor" Value="#717171"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HeightRequest" Value="45"/>
+        <Setter Property="Margin" Value="10,0,0,0" />
+    </Style>
+
+    <Style x:Key="btnSearch" TargetType="Button">
+        <Setter Property="Text" Value="{ resources:Translate search_device }"/>
+        <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+        <Setter Property="BackgroundColor" Value="#FFCB4E"/>
+        <Setter Property="TextColor" Value="#717171"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HeightRequest" Value="45"/>
+        <Setter Property="Margin" Value="10,0,0,0" />
+    </Style>
+
+    <Style x:Key="lbText" TargetType="Label">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="TextColor" Value="Red"/>
+    </Style>
+
+    <Style x:Key="ControlButtons" TargetType="Button">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="BackgroundColor" Value="#FFCB4E"/>
+        <Setter Property="TextColor" Value="#343434"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="HeightRequest" Value="45"/>
+        <Setter Property="WidthRequest" Value="100"/>
+    </Style>
+</ResourceDictionary>
