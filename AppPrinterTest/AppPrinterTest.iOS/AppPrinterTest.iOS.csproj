@@ -114,19 +114,35 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="ImageUtility">
+      <HintPath>D:\Iberostar\ExcisaT\Components\Release\RPP300 SDK&amp;API\ImageUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="RongtaPrinterSDK, Version=1.0.6717.24680, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Iberostar\ExcisaT\Components\Release\RPP300 SDK&amp;API\RongtaPrinterSDK.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
+    <PackageReference Include="ZXing.Net.Mobile">
+      <Version>2.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="ZXing.Net.Mobile.Forms">
+      <Version>2.4.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppPrinterTest\AppPrinterTest.csproj">
       <Project>{F9BBCAB6-4B68-48E6-BD3A-BB90BD45C8D8}</Project>
       <Name>AppPrinterTest</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

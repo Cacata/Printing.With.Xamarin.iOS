@@ -50,5 +50,7 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>AppPrinterTest</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>This app uses bluetooth in order to access the receipt printer</string>
 </dict>
 </plist>

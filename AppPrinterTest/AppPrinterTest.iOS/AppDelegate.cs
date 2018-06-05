@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using AppPrinterTest.Helper;
+using AppPrinterTest.iOS.Dependecy;
 using Foundation;
 using UIKit;
 
@@ -23,6 +24,7 @@ namespace AppPrinterTest.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            GloVa.BluetoothControl = new BluetoothHelper();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

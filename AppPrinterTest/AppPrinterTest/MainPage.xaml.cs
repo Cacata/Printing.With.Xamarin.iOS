@@ -42,14 +42,14 @@ namespace AppPrinterTest
         //Evento para limpiar la lista de tickets.
         protected async void OnButtonSearch(object sender, EventArgs e)
         {
-            if (!GloVa.BluetoothControl.BluetoothState())
-            {
-                var answer = await DisplayAlert("Bluetooth is Shut Down", "Do you want to turn on bluetooth for this device?", "Yes", "No");
-                if (answer)
-                {
-                    GloVa.BluetoothControl.TurnOnBluetooth();
-                }
-            }
+            //if (!GloVa.BluetoothControl.BluetoothState())
+            //{
+            //    var answer = await DisplayAlert("Bluetooth is Shut Down", "Do you want to turn on bluetooth for this device?", "Yes", "No");
+            //    if (answer)
+            //    {
+            //        GloVa.BluetoothControl.TurnOnBluetooth();
+            //    }
+            //}
             GloVa.BluetoothControl.PrepareAdapter(FoundDevices);
             GloVa.BluetoothControl.SearchDevices();
         }
